@@ -33,7 +33,7 @@ export default {
   justify-content: space-between;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(#f0eb269c, #fff);
+  background: linear-gradient(#f0eb26, #fff);
   min-width: 100vw;
 }
 .black {
