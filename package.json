@@ -41,6 +41,8 @@
     "postcss": "^8.2.8",
     "prettier": "^2.2.1",
     "push-dir": "^0.4.1",
+    "sass": "^1.34.0",
+    "sass-loader": "^10.2.0",
     "stylelint": "^13.12.0",
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-standard": "^21.0.0"
