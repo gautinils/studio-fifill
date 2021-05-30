@@ -2,17 +2,20 @@
   <div class="container" :class="{ black }" @scroll="handleScroll">
     <section class="hero">
       <h1 class="text-6xl md:text-9xl font-medium">
-        <span
+        <a
+          href="mailto:elsa@fifill.co; gauti@fifill.co"
           @mouseover="() => (black = true)"
           @mouseout="() => (black = false)"
         >
           Stúdíó fífill
-        </span>
+        </a>
       </h1>
       <div class="work-with-us w-full mt-5" :class="!black ? 'invisible' : ''">
-        <scrolling-text text="Let's work together // Let's work together //" />
         <scrolling-text
-          text="Send us a line // Send us a line // Send us a line // Send us a line //"
+          text="Gerum eitthvað saman // Let's work together // Gerum eitthvað saman // Let's work together //"
+        />
+        <scrolling-text
+          text="Drop us a line // Sendu okkur línu // Drop us a line // Sendu okkur línu //"
         />
       </div>
     </section>
