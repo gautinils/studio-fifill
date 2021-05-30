@@ -10,7 +10,10 @@
           Stúdíó fífill
         </a>
       </h1>
-      <div class="work-with-us w-full mt-5" :class="!black ? 'invisible' : ''">
+      <div
+        class="work-with-us w-full mt-5 md:block hidden"
+        :class="!black ? 'invisible' : ''"
+      >
         <scrolling-text
           text="Gerum eitthvað saman // Let's work together // Gerum eitthvað saman // Let's work together //"
         />
@@ -83,7 +86,7 @@ export default {
   font-style: italic;
   h1 {
     -webkit-text-stroke: 1px black;
-    cursor: pointer;
+    text-align: center;
   }
 }
 .text {
