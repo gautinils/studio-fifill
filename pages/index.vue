@@ -1,25 +1,29 @@
 <template>
   <div class="container" :class="{ black }" @scroll="handleScroll">
     <section class="hero">
-      <h1 class="text-7xl md:text-9xl font-medium">
-        <a
-          href="mailto:elsa@fifill.co; gauti@fifill.co"
-          @mouseover="() => (black = !black)"
-          @mouseout="() => (black = !black)"
-        >
-          Stúdíó fífill
-        </a>
-      </h1>
       <div
-        class="work-with-us w-full mt-5 md:block hidden"
-        :class="!black ? 'invisible' : ''"
+        class="w-full"
+        @mouseover="() => (black = !black)"
+        @mouseout="() => (black = !black)"
       >
-        <scrolling-text
-          text="Gerum eitthvað saman // Let's work together // Gerum eitthvað saman // Let's work together //"
-        />
-        <scrolling-text
-          text="Drop us a line // Sendu okkur línu // Drop us a line // Sendu okkur línu //"
-        />
+        <h1 class="text-7xl md:text-9xl font-medium">
+          <a href="mailto:elsa@fifill.co; gauti@fifill.co"> Stúdíó fífill </a>
+        </h1>
+        <div
+          class="work-with-us w-full mt-5 md:block hidden"
+          :class="!black ? 'invisible' : ''"
+        >
+          <a href="mailto:elsa@fifill.co; gauti@fifill.co">
+            <scrolling-text
+              text="Gerum eitthvað saman // Let's work together // Gerum eitthvað saman // Let's work together //"
+            />
+          </a>
+          <a href="mailto:elsa@fifill.co; gauti@fifill.co">
+            <scrolling-text
+              text="Drop us a line // Sendu okkur línu // Drop us a line // Sendu okkur línu //"
+            />
+          </a>
+        </div>
       </div>
     </section>
 
