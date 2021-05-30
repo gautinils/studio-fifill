@@ -25,7 +25,7 @@ export default {
 .scrolling-text {
   display: flex;
   position: relative;
-  height: 50px;
+  height: 70px;
   overflow: hidden;
 }
 .scroll {
