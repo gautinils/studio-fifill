@@ -4,8 +4,8 @@
       <h1 class="text-7xl md:text-9xl font-medium">
         <a
           href="mailto:elsa@fifill.co; gauti@fifill.co"
-          @mouseover="() => (black = true)"
-          @mouseout="() => (black = false)"
+          @mouseover="() => (black = !black)"
+          @mouseout="() => (black = !black)"
         >
           Stúdíó fífill
         </a>
