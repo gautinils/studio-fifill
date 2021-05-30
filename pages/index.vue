@@ -1,7 +1,7 @@
 <template>
   <div class="container" :class="{ black }" @scroll="handleScroll">
     <section class="hero">
-      <h1 class="text-9xl font-medium">
+      <h1 class="text-6xl md:text-9xl font-medium">
         <span
           @mouseover="() => (black = true)"
           @mouseout="() => (black = false)"
@@ -9,8 +9,11 @@
           Stúdíó fífill
         </span>
       </h1>
-      <div class="work-with-us" :class="!black ? 'invisible' : ''">
-        <scrolling-text text="Let's work together" />
+      <div class="work-with-us w-full mt-5" :class="!black ? 'invisible' : ''">
+        <scrolling-text text="Let's work together // Let's work together //" />
+        <scrolling-text
+          text="Send us a line // Send us a line // Send us a line // Send us a line //"
+        />
       </div>
     </section>
 
@@ -61,12 +64,24 @@ export default {
   flex-direction: column;
   background: linear-gradient(#f0eb26, #fff);
   min-width: 100vw;
+  &.black {
+    background: #000;
+    overflow: hidden;
+  }
 }
 .hero {
-  min-height: 100vh;
-}
-.black {
-  background: black;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #f0eb26;
+  font-family: antique-olive-compact, sans-serif;
+  font-style: italic;
+  h1 {
+    -webkit-text-stroke: 1px black;
+    cursor: pointer;
+  }
 }
 .text {
   transform: translateX(-500px);
@@ -76,22 +91,6 @@ export default {
   &.visible {
     opacity: 1;
     transform: translateX(0);
-  }
-}
-.work-with-us {
-  color: #f0eb26;
-  font-family: antique-olive-compact, sans-serif;
-  font-style: italic;
-}
-h1 {
-  color: #f0eb26;
-  text-align: center;
-  margin-top: 20%;
-  -webkit-text-stroke: 1px black;
-  font-family: antique-olive-compact, sans-serif;
-  font-style: italic;
-  span {
-    cursor: pointer;
   }
 }
 </style>
