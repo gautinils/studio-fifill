@@ -1,7 +1,7 @@
 <template>
   <div class="container" :class="{ black }" @scroll="handleScroll">
     <section class="hero">
-      <h1 class="text-6xl md:text-9xl font-medium">
+      <h1 class="text-7xl md:text-9xl font-medium">
         <a
           href="mailto:elsa@fifill.co; gauti@fifill.co"
           @mouseover="() => (black = true)"
@@ -23,7 +23,7 @@
       </div>
     </section>
 
-    <section class="text text-xl p-5" :class="{ visible: showText }">
+    <section class="text text-lg md:text-xl p-5" :class="{ visible: showText }">
       <div>
         <p>Design studio based in</p>
         <p>Brussels & Reykjavík</p>

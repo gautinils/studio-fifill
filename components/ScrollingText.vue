@@ -26,6 +26,7 @@ export default {
   display: flex;
   position: relative;
   height: 50px;
+  overflow: hidden;
 }
 .scroll {
   display: flex;
