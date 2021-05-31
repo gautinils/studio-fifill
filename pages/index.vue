@@ -1,8 +1,8 @@
 <template>
-  <div class="container" :class="{ black }" @scroll="handleScroll">
+  <div class="container p-3" :class="{ black }" @scroll="handleScroll">
     <section class="hero">
       <h1
-        class="text-7xl md:text-9xl font-medium"
+        class="text-7xl md:text-8xl lg:text-9xl font-medium"
         @mouseover="() => (black = !black)"
         @mouseout="() => (black = !black)"
       >
@@ -63,7 +63,6 @@ export default {
 
 <style lang="scss" scoped>
 .container {
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
   background: linear-gradient(#f0eb26, #fff);
@@ -75,6 +74,7 @@ export default {
 }
 .hero {
   height: 100vh;
+  min-height: 500px;
   display: flex;
   flex-direction: column;
   justify-content: center;
