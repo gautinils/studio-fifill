@@ -1,29 +1,23 @@
 <template>
   <div class="container" :class="{ black }" @scroll="handleScroll">
     <section class="hero">
-      <div
-        class="w-full"
+      <h1
+        class="text-7xl md:text-9xl font-medium"
         @mouseover="() => (black = !black)"
         @mouseout="() => (black = !black)"
       >
-        <h1 class="text-7xl md:text-9xl font-medium">
-          <a href="mailto:elsa@fifill.co; gauti@fifill.co"> Stúdíó fífill </a>
-        </h1>
-        <div
-          class="work-with-us w-full mt-5 md:block hidden"
-          :class="!black ? 'invisible' : ''"
-        >
-          <a href="mailto:elsa@fifill.co; gauti@fifill.co">
-            <scrolling-text
-              text="Gerum eitthvað saman // Let's work together // Gerum eitthvað saman // Let's work together //"
-            />
-          </a>
-          <a href="mailto:elsa@fifill.co; gauti@fifill.co">
-            <scrolling-text
-              text="Drop us a line // Sendu okkur línu // Drop us a line // Sendu okkur línu //"
-            />
-          </a>
-        </div>
+        <a href="mailto:elsa@fifill.co; gauti@fifill.co"> Stúdíó fífill </a>
+      </h1>
+      <div
+        class="work-with-us w-full mt-5 md:block hidden"
+        :class="!black ? 'invisible' : ''"
+      >
+        <scrolling-text
+          text="Gerum eitthvað saman // Let's work together // Gerum eitthvað saman // Let's work together //"
+        />
+        <scrolling-text
+          text="Drop us a line // Sendu okkur línu // Drop us a line // Sendu okkur línu //"
+        />
       </div>
     </section>
 
@@ -33,8 +27,8 @@
         <p>Brussels & Reykjavík</p>
       </div>
       <div class="pl-20">
-        <p>elsa@fifill.co</p>
-        <p>gauti@fifill.co</p>
+        <p><a href="mailto:elsa@fifill.co">elsa@fifill.co</a></p>
+        <p><a href="mailto:gauti@fifill.co">gauti@fifill.co</a></p>
       </div>
     </section>
   </div>
