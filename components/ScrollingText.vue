@@ -1,8 +1,8 @@
 <template>
   <div class="scrolling-text m-4">
     <div class="scroll">
-      <span class="text-4xl">{{ text }}&nbsp;</span>
-      <span class="text-4xl">{{ text }}&nbsp;</span>
+      <span class="text-2xl">{{ text }}&nbsp;</span>
+      <span class="text-2xl">{{ text }}&nbsp;</span>
     </div>
   </div>
 </template>

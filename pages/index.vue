@@ -75,7 +75,7 @@ export default {
   background: linear-gradient(#f0eb26, #fff);
   min-width: 100vw;
   &.black {
-    background: #000;
+    background: #222;
     overflow: hidden;
   }
 }
@@ -89,7 +89,7 @@ export default {
   font-family: antique-olive-compact, sans-serif;
   font-style: italic;
   h1 {
-    -webkit-text-stroke: 1px black;
+    -webkit-text-stroke: 1px #222;
     text-align: center;
   }
 }
