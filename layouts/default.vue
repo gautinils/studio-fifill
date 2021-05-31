@@ -3,6 +3,9 @@
 </template>
 
 <style>
+body {
+  background-color: #f0eb26;
+}
 html {
   font-family: acumin-pro, sans-serif;
   font-size: 16px;
