@@ -67,7 +67,7 @@ export default {
   display: flex;
   flex-direction: column;
   background: linear-gradient(#f0eb26, #fff);
-  min-width: 100vw;
+  min-width: 100%;
   &.black {
     background: #222;
     overflow: hidden;
