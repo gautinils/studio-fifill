@@ -98,6 +98,7 @@ export default {
   opacity: 0;
   transition: all 0.95s cubic-bezier(0.475, 0.425, 0, 0.99) 0s;
   display: flex;
+  color: #222;
   &.visible {
     opacity: 1;
     transform: translateX(0);
