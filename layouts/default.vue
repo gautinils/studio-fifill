@@ -3,9 +3,6 @@
 </template>
 
 <style>
-body {
-  background-color: #f0eb26;
-}
 html {
   font-family: acumin-pro, sans-serif;
   font-size: 16px;
@@ -15,6 +12,7 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+  cursor: url('/fifill.png'), auto;
 }
 
 *,

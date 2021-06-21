@@ -1,5 +1,6 @@
 <template>
-  <div class="container p-3" :class="{ black }" @scroll="handleScroll">
+  <div class="container p-3" :class="{ black }">
+    <div></div>
     <section class="hero">
       <h1
         class="text-7xl md:text-8xl lg:text-9xl font-medium"
@@ -8,20 +9,16 @@
       >
         <a href="mailto:elsa@fifill.co; gauti@fifill.co"> Stúdíó fífill </a>
       </h1>
-      <div
-        class="work-with-us w-full mt-5 md:block hidden"
-        :class="!black ? 'invisible' : ''"
+      <h3
+        class="text-3xl md:text-4xl lg:text-5xl font-medium"
+        :class="{ invisible: !black }"
       >
-        <scrolling-text
-          text="Gerum eitthvað saman // Let's work together // Gerum eitthvað saman // Let's work together //"
-        />
-        <scrolling-text
-          text="Drop us a line // Sendu okkur línu // Drop us a line // Sendu okkur línu //"
-        />
-      </div>
+        <p>Sendu okkur línu</p>
+        <p>Drop us a line</p>
+        <p>Rendez-vous nous</p>
+      </h3>
     </section>
-
-    <section class="text text-lg md:text-xl p-5" :class="{ visible: showText }">
+    <section class="text text-lg md:text-xl p-5">
       <div>
         <p>Design studio based in</p>
         <p>Brussels & Reykjavík</p>
@@ -35,35 +32,35 @@
 </template>
 
 <script>
-import ScrollingText from '~/components/ScrollingText.vue'
 export default {
-  components: { ScrollingText },
   data() {
     return {
       black: false,
-      showText: false,
     }
   },
-  mounted() {
-    window.addEventListener('scroll', this.handleScroll)
+  head() {
+    return {
+      title: this.title,
+    }
   },
-  destroyed() {
-    window.removeEventListener('scroll', this.handleScroll)
-  },
-  methods: {
-    handleScroll(event) {
-      if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-        this.showText = true
-        window.removeEventListener('scroll', this.handleScroll)
-      }
+  computed: {
+    title() {
+      return this.black
+        ? 'contact us // rendez-vous nous // sendu okkur línu'
+        : 'Stúdíó fífill'
     },
   },
 }
 </script>
 
 <style lang="scss" scoped>
+a {
+  cursor: url('/fifill2.png'), pointer;
+}
 .container {
   display: flex;
+  justify-content: space-between;
+  height: 100vh;
   flex-direction: column;
   background: linear-gradient(#f0eb26, #fff);
   min-width: 100%;
@@ -73,12 +70,9 @@ export default {
   }
 }
 .hero {
-  height: 100vh;
-  min-height: 500px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   color: #f0eb26;
   font-family: antique-olive-compact, sans-serif;
   font-style: italic;
@@ -86,16 +80,13 @@ export default {
     -webkit-text-stroke: 1px #222;
     text-align: center;
   }
+  h3 {
+    position: absolute;
+    bottom: 5%;
+  }
 }
 .text {
-  transform: translateX(-500px);
-  opacity: 0;
-  transition: all 0.95s cubic-bezier(0.475, 0.425, 0, 0.99) 0s;
   display: flex;
   color: #222;
-  &.visible {
-    opacity: 1;
-    transform: translateX(0);
-  }
 }
 </style>
