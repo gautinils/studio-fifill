@@ -30,7 +30,9 @@
               style="height: 23px"
             >
               <path
-                :class="black && blackCount % 3 === 1 ? 'line-path' : ''"
+                :class="
+                  black && blackCount % 3 === 1 ? 'line-path' : 'line-path'
+                "
                 d="M2.39453 2.53179C44.6929 2.53179 86.9913 2.53179 129.29 2.53179C152.311 2.53179 179.53 -1.05851 201.896 6.19543C209.939 8.8039 223.264 12.6276 227.209 20.5169"
                 stroke="white"
                 stroke-width="3"
@@ -169,7 +171,7 @@ a {
   stroke-dasharray: 230;
   stroke-dashoffset: 0;
   .visible & {
-    animation: line 0.3s linear alternate forwards;
+    animation: line 0.2s linear alternate forwards;
   }
 }
 
