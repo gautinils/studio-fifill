@@ -99,18 +99,6 @@ export default {
       blackCount: 0,
     }
   },
-  head() {
-    return {
-      title: this.title,
-    }
-  },
-  computed: {
-    title() {
-      return this.black
-        ? 'contact us // rendez-vous nous // sendu okkur línu'
-        : 'Stúdíó fífill'
-    },
-  },
   methods: {
     setBlack() {
       this.black = true
