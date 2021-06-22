@@ -15,6 +15,7 @@ export default {
         content: 'width=device-width, initial-scale=1, viewport-fit=cover',
       },
       { hid: 'description', name: 'description', content: '' },
+      { hid: 'og:image', name: 'og:image', content: '/image.png' },
     ],
     link: [
       { rel: 'icon', type: 'image/png', href: '/fifill3.png' },
