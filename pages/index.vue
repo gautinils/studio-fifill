@@ -23,6 +23,7 @@
             <img
               :class="black && blackCount >= 2 ? 'visible' : 'invisible'"
               src="/line.png"
+              style="height: 13.3px"
             />
           </div>
           <div class="md:mb-4 flex md:items-center">
