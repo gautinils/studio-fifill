@@ -13,6 +13,7 @@ html {
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
   cursor: url('/fifill.png'), auto;
+  cursor: -webkit-image-set(url('/fifill.png') 1x, url('/fifill.png') 2x), auto;
 }
 
 *,

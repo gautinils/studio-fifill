@@ -3,34 +3,33 @@
     class="container flex flex-col-reverse md:flex-row p-3"
     :class="{ black }"
   >
-    <section class="text md:w-1/3 md:p-5">
-      <div class="md:w-1/2 flex flex-col h-full">
-        <div class="text-2xl md:text-4xl md:py-10 flex-1 pb-5">
-          <p>We create experiences in the digital space</p>
+    <section class="text md:w-1/3 md:p-5 md:pb-10">
+      <div class="md:w-2/3 lg:w-2/5 flex flex-col h-full">
+        <div class="text-2xl md:text-4xl md:py-6 flex-1 pb-5">
+          <p class="leading-none">We create experiences in the digital space</p>
         </div>
         <div
           class="
             flex flex-row
             md:flex-col md:flex-1
-            md:pt-5
+            md:py-8
             md:justify-around
             text-xl
             md:text-2xl
           "
         >
-          <div class="md:mt-3 md:block hidden">
-            <p>Let's work together!</p>
+          <div class="md:mt-5 md:block hidden">
+            <p class="leading-none">Let's work together!</p>
             <img
               :class="black && blackCount >= 2 ? 'visible' : 'invisible'"
               src="/line.png"
             />
           </div>
-          <div class="md:my-3 flex md:items-center">
+          <div class="md:mb-4 flex md:items-center">
             <div>
-              <p>
+              <p class="leading-none">
                 <a id="elsa" href="mailto:elsa@fifill.co">elsa@fifill.co</a>
-              </p>
-              <p>
+
                 <a id="gauti" href="mailto:gauti@fifill.co">gauti@fifill.co</a>
               </p>
             </div>
@@ -40,7 +39,7 @@
               src="/arrow.png"
             />
           </div>
-          <div class="transform md:w-32 md:block hidden">
+          <div class="transform md:w-32 md:block hidden leading-none">
             <p>Based in Brussels & Reykjavík</p>
           </div>
         </div>
@@ -90,6 +89,9 @@ export default {
 <style lang="scss" scoped>
 a {
   cursor: url('/fifill2.png'), pointer;
+  cursor: -webkit-image-set(url('/fifill2.png') 1x, url('/fifill2.png') 2x),
+    auto;
+
   &#elsa {
     cursor: url('/elsa.png'), pointer;
   }
@@ -128,6 +130,6 @@ a {
 }
 .transform {
   transform: rotate(90deg);
-  transform-origin: 40px;
+  transform-origin: 33px;
 }
 </style>
