@@ -14,7 +14,21 @@ export default {
         name: 'viewport',
         content: 'width=device-width, initial-scale=1, viewport-fit=cover',
       },
-      { hid: 'description', name: 'description', content: '' },
+      {
+        hid: 'og:title',
+        name: 'og:title',
+        content: 'Stúdíó fífil',
+      },
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Stúdíó fífill // web studio',
+      },
+      {
+        hid: 'og:description',
+        name: 'og:description',
+        content: 'Stúdíó fífill // web studio',
+      },
       { hid: 'og:image', name: 'og:image', content: '/image.png' },
     ],
     link: [
