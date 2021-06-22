@@ -19,12 +19,25 @@
           "
         >
           <div class="md:mt-5 md:block hidden">
-            <p class="leading-none">Let's work together!</p>
-            <img
-              :class="black && blackCount >= 2 ? 'visible' : 'invisible'"
-              src="/line.png"
-              style="height: 13.3px"
-            />
+            <p class="leading-none pb-1">Let's work together!</p>
+            <svg
+              :class="black && blackCount % 3 !== 2 ? 'visible' : 'invisible'"
+              width="229"
+              height="23"
+              viewBox="0 0 229 23"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              style="height: 23px"
+            >
+              <path
+                :class="black && blackCount % 3 === 1 ? 'line-path' : ''"
+                d="M2.39453 2.53179C44.6929 2.53179 86.9913 2.53179 129.29 2.53179C152.311 2.53179 179.53 -1.05851 201.896 6.19543C209.939 8.8039 223.264 12.6276 227.209 20.5169"
+                stroke="white"
+                stroke-width="3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
           </div>
           <div class="md:mb-4 flex md:items-center">
             <div>
@@ -34,11 +47,29 @@
                 <a id="gauti" href="mailto:gauti@fifill.co">gauti@fifill.co</a>
               </p>
             </div>
-            <img
+            <svg
               class="pl-7"
-              :class="black && blackCount >= 3 ? 'visible' : 'invisible'"
-              src="/arrow.png"
-            />
+              :class="
+                black && (blackCount % 3 === 2 || blackCount % 3 === 0)
+                  ? 'visible'
+                  : 'invisible'
+              "
+              width="177"
+              height="96"
+              viewBox="0 0 177 96"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              style="min-width: 177px"
+            >
+              <path
+                :class="black && blackCount % 3 === 2 ? 'arrow-path' : ''"
+                d="M175.225 15.7187C138.782 16.8943 102.887 29.3549 67.3146 36.7013C52.5862 39.7431 37.8289 41.0839 23.0178 43.3625C19.8419 43.8511 4.58638 50.5765 2.03517 48.0253C1.14861 47.1388 17.3066 36.1172 18.6881 35.0361C26.7756 28.7067 34.6487 22.1344 42.6683 15.7187C49.1846 10.5056 71.9448 1.14174 63.6509 2.06329C50.1574 3.56257 33.6474 25.067 23.684 33.0377C17.52 37.9689 9.07046 44.8248 5.03269 51.689C3.53424 54.2363 1.55784 54.6865 5.03269 54.6865C18.2577 54.6865 28.6487 57.1127 40.3369 63.6791C52.7244 70.6384 77.3801 78.888 82.3022 93.6543"
+                stroke="white"
+                stroke-width="3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
           </div>
           <div class="transform md:w-32 md:block hidden leading-none">
             <p>Based in Brussels & Reykjavík</p>
@@ -132,5 +163,38 @@ a {
 .transform {
   transform: rotate(90deg);
   transform-origin: 33px;
+}
+
+.line-path {
+  stroke-dasharray: 230;
+  stroke-dashoffset: 0;
+  .visible & {
+    animation: line 0.3s linear alternate forwards;
+  }
+}
+
+.arrow-path {
+  stroke-dasharray: 430;
+  stroke-dashoffset: 0;
+  .visible & {
+    animation: arrow 0.5s linear alternate forwards;
+  }
+}
+
+@keyframes line {
+  from {
+    stroke-dashoffset: 230;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes arrow {
+  from {
+    stroke-dashoffset: 430;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
 }
 </style>
