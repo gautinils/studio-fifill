@@ -1,24 +1,36 @@
 <template>
   <div
-    class="container flex flex-col-reverse md:flex-row p-3"
+    class="
+      container
+      flex flex-col-reverse
+      md:flex-row
+      p-5
+      justify-around
+      md:justify-start
+    "
     :class="{ black }"
   >
-    <section class="text md:w-1/3 md:p-5 md:pb-10">
+    <section class="text md:w-1/3 md:p-5 md:pb-10 flex-1 md:flex-none">
       <div class="md:w-2/3 lg:w-2/5 flex flex-col h-full">
-        <div class="text-2xl md:text-4xl md:py-6 flex-1 pb-5">
+        <div class="text-3xl md:text-4xl flex-1">
           <p class="leading-none">We create experiences in the digital space</p>
         </div>
         <div
           class="
             flex flex-row
-            md:flex-col md:flex-1
+            md:flex-col
+            flex-1
             md:py-8
+            justify-between
             md:justify-around
             text-xl
             md:text-2xl
           "
         >
-          <div class="md:mt-5 md:block hidden">
+          <div
+            class="md:mt-5 md:block absolute md:relative"
+            :class="{ hidden: !showLetsWork }"
+          >
             <p class="leading-none pb-1">Let's work together!</p>
             <svg
               :class="black && blackCount % 3 !== 2 ? 'visible' : 'invisible'"
@@ -41,16 +53,18 @@
               />
             </svg>
           </div>
-          <div class="md:mb-4 flex md:items-center">
+          <div
+            class="md:mb-4 flex items-end md:items-center flex-1 md:flex-none"
+          >
             <div>
-              <p class="leading-none">
+              <p class="leading-none mb-6 md:mb-0">
                 <a id="elsa" href="mailto:elsa@fifill.co">elsa@fifill.co</a>
 
                 <a id="gauti" href="mailto:gauti@fifill.co">gauti@fifill.co</a>
               </p>
             </div>
             <svg
-              class="pl-7"
+              class="md:pl-7 arrow w-32 md:w-44"
               :class="
                 black && (blackCount % 3 === 2 || blackCount % 3 === 0)
                   ? 'visible'
@@ -61,10 +75,9 @@
               viewBox="0 0 177 96"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              style="min-width: 177px"
             >
               <path
-                :class="black && blackCount % 3 === 2 ? 'arrow-path' : ''"
+                class="arrow-path"
                 d="M175.225 15.7187C138.782 16.8943 102.887 29.3549 67.3146 36.7013C52.5862 39.7431 37.8289 41.0839 23.0178 43.3625C19.8419 43.8511 4.58638 50.5765 2.03517 48.0253C1.14861 47.1388 17.3066 36.1172 18.6881 35.0361C26.7756 28.7067 34.6487 22.1344 42.6683 15.7187C49.1846 10.5056 71.9448 1.14174 63.6509 2.06329C50.1574 3.56257 33.6474 25.067 23.684 33.0377C17.52 37.9689 9.07046 44.8248 5.03269 51.689C3.53424 54.2363 1.55784 54.6865 5.03269 54.6865C18.2577 54.6865 28.6487 57.1127 40.3369 63.6791C52.7244 70.6384 77.3801 78.888 82.3022 93.6543"
                 stroke="white"
                 stroke-width="3"
@@ -73,15 +86,25 @@
               />
             </svg>
           </div>
-          <div class="transform md:w-32 md:block hidden leading-none">
+          <div class="transform w-32 leading-none self-start md:self-auto">
             <p>Based in Brussels & Reykjavík</p>
           </div>
         </div>
       </div>
     </section>
-    <section class="hero">
+    <section
+      class="
+        hero
+        flex
+        md:flex-col
+        md:justify-center
+        items-end
+        md:items-start
+        flex-1
+      "
+    >
       <h1
-        class="text-7xl md:text-9xl lg:text-10xl font-medium"
+        class="text-8xl sm:text-9xl font-medium text-left md:text-center"
         @mouseover="setBlack()"
         @mouseout="() => (black = !black)"
       >
@@ -97,6 +120,19 @@ export default {
     return {
       black: false,
       blackCount: 0,
+      showLetsWork: false,
+    }
+  },
+  mounted() {
+    if (/Mobi|Android/i.test(navigator.userAgent)) {
+      setTimeout(() => {
+        this.blackCount = 1
+        this.black = true
+        this.showLetsWork = true
+        setTimeout(() => {
+          this.blackCount = 3
+        }, 2000)
+      }, 2000)
     }
   },
   methods: {
@@ -132,16 +168,11 @@ a {
   }
 }
 .hero {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   color: #f0eb26;
   font-family: antique-olive-compact, sans-serif;
   font-style: italic;
-  height: 100%;
   h1 {
     -webkit-text-stroke: 1px #222;
-    text-align: center;
   }
 }
 .text {
@@ -152,7 +183,11 @@ a {
 }
 .transform {
   transform: rotate(90deg);
-  transform-origin: 33px;
+  margin-right: -2em;
+  @media (min-width: 768px) {
+    transform-origin: 37px;
+    margin-right: 0;
+  }
 }
 
 .line-path {
@@ -163,6 +198,12 @@ a {
   }
 }
 
+.arrow {
+  min-width: 120px;
+  @media (min-width: 768px) {
+    min-width: 170px;
+  }
+}
 .arrow-path {
   stroke-dasharray: 430;
   stroke-dashoffset: 0;
