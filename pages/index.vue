@@ -64,7 +64,7 @@
               </p>
             </div>
             <svg
-              class="md:pl-7 arrow w-32 md:w-44"
+              class="md:pl-7 arrow w-32 md:w-44git"
               :class="
                 black && (blackCount % 3 === 2 || blackCount % 3 === 0)
                   ? 'visible'
